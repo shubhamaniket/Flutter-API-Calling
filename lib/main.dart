@@ -37,6 +37,16 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    if(userData == null){
+      return Scaffold(
+        body: Container(
+          color: Colors.white,
+          child: Center(
+        child: CircularProgressIndicator(),
+      ),
+        ),
+      );
+    }
     return Scaffold(
       body: ListView.builder(
         itemBuilder: (BuildContext context,int index){
